@@ -1,2 +1,12 @@
 C:\Users\Jimmy\Documents\C#\Gun Catalog\Gun Catalog\bin\Debug\Gun Catalog.exe.config
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\Gun Catalog.exe.config
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.vbprojResolveAssemblyReference.cache
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmMain.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.Resources.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.vbproj.GenerateResource.Cache
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\Gun Catalog.exe
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\Gun Catalog.pdb
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\Gun Catalog.xml
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.exe
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.xml
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.pdb
