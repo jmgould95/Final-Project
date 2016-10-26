@@ -1,1 +1,2 @@
 C:\Users\Jimmy\Documents\C#\Gun Catalog\Gun Catalog\bin\Debug\Gun Catalog.exe.config
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\Gun Catalog.exe.config
