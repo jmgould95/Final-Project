@@ -108,6 +108,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAmmo.resx">
+      <DependentUpon>frmAmmo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGun.resx">
       <DependentUpon>frmGun.vb</DependentUpon>
     </EmbeddedResource>
