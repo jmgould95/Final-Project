@@ -78,10 +78,28 @@
     <Compile Include="frmAmmo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmEditAmmo.Designer.vb">
+      <DependentUpon>frmEditAmmo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditAmmo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditGun.Designer.vb">
+      <DependentUpon>frmEditGun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditGun.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmGun.Designer.vb">
       <DependentUpon>frmGun.vb</DependentUpon>
     </Compile>
     <Compile Include="frmGun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventory.Designer.vb">
+      <DependentUpon>frmInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.vb">

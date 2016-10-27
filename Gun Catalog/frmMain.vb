@@ -8,6 +8,6 @@
     End Sub
 
     Private Sub btnViewInventory_Click(sender As Object, e As EventArgs) Handles btnViewInventory.Click
-
+        frmInventory.ShowDialog()
     End Sub
 End Class
