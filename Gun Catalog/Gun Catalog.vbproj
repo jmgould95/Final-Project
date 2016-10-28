@@ -132,6 +132,9 @@
     <EmbeddedResource Include="frmGun.resx">
       <DependentUpon>frmGun.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInventory.resx">
+      <DependentUpon>frmInventory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>

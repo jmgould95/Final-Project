@@ -23,8 +23,8 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnViewInventory = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnAddAmmo = New System.Windows.Forms.Button()
+        Me.btnAddGun = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -37,23 +37,23 @@ Partial Class frmMain
         Me.btnViewInventory.Text = "View Inventory"
         Me.btnViewInventory.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnAddAmmo
         '
-        Me.Button2.Location = New System.Drawing.Point(227, 114)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(97, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Add Ammo"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnAddAmmo.Location = New System.Drawing.Point(227, 114)
+        Me.btnAddAmmo.Name = "btnAddAmmo"
+        Me.btnAddAmmo.Size = New System.Drawing.Size(97, 23)
+        Me.btnAddAmmo.TabIndex = 1
+        Me.btnAddAmmo.Text = "Add Ammo"
+        Me.btnAddAmmo.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnAddGun
         '
-        Me.Button3.Location = New System.Drawing.Point(47, 114)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(94, 23)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Add Gun"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnAddGun.Location = New System.Drawing.Point(47, 114)
+        Me.btnAddGun.Name = "btnAddGun"
+        Me.btnAddGun.Size = New System.Drawing.Size(94, 23)
+        Me.btnAddGun.TabIndex = 2
+        Me.btnAddGun.Text = "Add Gun"
+        Me.btnAddGun.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -71,8 +71,8 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(365, 320)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnAddGun)
+        Me.Controls.Add(Me.btnAddAmmo)
         Me.Controls.Add(Me.btnViewInventory)
         Me.Name = "frmMain"
         Me.Text = "Gould Gun Catalog"
@@ -82,7 +82,7 @@ Partial Class frmMain
     End Sub
 
     Friend WithEvents btnViewInventory As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnAddAmmo As Button
+    Friend WithEvents btnAddGun As Button
     Friend WithEvents Label1 As Label
 End Class

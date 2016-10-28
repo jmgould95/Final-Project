@@ -1,9 +1,9 @@
 ﻿Public Class frmMain
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAddGun.Click
         frmGun.ShowDialog()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAddAmmo.Click
         frmAmmo.ShowDialog()
     End Sub
 
