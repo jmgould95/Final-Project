@@ -78,9 +78,10 @@ Partial Class frmGun
         '
         'dtpDatePurchased
         '
+        Me.dtpDatePurchased.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDatePurchased.Location = New System.Drawing.Point(128, 87)
         Me.dtpDatePurchased.Name = "dtpDatePurchased"
-        Me.dtpDatePurchased.Size = New System.Drawing.Size(200, 22)
+        Me.dtpDatePurchased.Size = New System.Drawing.Size(115, 22)
         Me.dtpDatePurchased.TabIndex = 4
         '
         'Label3
