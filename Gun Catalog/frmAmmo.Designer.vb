@@ -29,8 +29,8 @@ Partial Class frmAmmo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BulletType = New System.Windows.Forms.GroupBox()
-        Me.radHollowPoint = New System.Windows.Forms.RadioButton()
         Me.radFMJ = New System.Windows.Forms.RadioButton()
+        Me.radHollowPoint = New System.Windows.Forms.RadioButton()
         Me.btnAddAmmo = New System.Windows.Forms.Button()
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
@@ -49,9 +49,10 @@ Partial Class frmAmmo
         '
         'dtpDatePurchased
         '
+        Me.dtpDatePurchased.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDatePurchased.Location = New System.Drawing.Point(122, 142)
         Me.dtpDatePurchased.Name = "dtpDatePurchased"
-        Me.dtpDatePurchased.Size = New System.Drawing.Size(200, 22)
+        Me.dtpDatePurchased.Size = New System.Drawing.Size(90, 22)
         Me.dtpDatePurchased.TabIndex = 10
         '
         'txtType
@@ -97,17 +98,6 @@ Partial Class frmAmmo
         Me.BulletType.TabStop = False
         Me.BulletType.Text = "Bullet Type"
         '
-        'radHollowPoint
-        '
-        Me.radHollowPoint.AutoSize = True
-        Me.radHollowPoint.Location = New System.Drawing.Point(6, 73)
-        Me.radHollowPoint.Name = "radHollowPoint"
-        Me.radHollowPoint.Size = New System.Drawing.Size(106, 21)
-        Me.radHollowPoint.TabIndex = 0
-        Me.radHollowPoint.TabStop = True
-        Me.radHollowPoint.Text = "Hollow Point"
-        Me.radHollowPoint.UseVisualStyleBackColor = True
-        '
         'radFMJ
         '
         Me.radFMJ.AutoSize = True
@@ -118,6 +108,17 @@ Partial Class frmAmmo
         Me.radFMJ.TabStop = True
         Me.radFMJ.Text = "Full Metal Jacket"
         Me.radFMJ.UseVisualStyleBackColor = True
+        '
+        'radHollowPoint
+        '
+        Me.radHollowPoint.AutoSize = True
+        Me.radHollowPoint.Location = New System.Drawing.Point(6, 73)
+        Me.radHollowPoint.Name = "radHollowPoint"
+        Me.radHollowPoint.Size = New System.Drawing.Size(106, 21)
+        Me.radHollowPoint.TabIndex = 0
+        Me.radHollowPoint.TabStop = True
+        Me.radHollowPoint.Text = "Hollow Point"
+        Me.radHollowPoint.UseVisualStyleBackColor = True
         '
         'btnAddAmmo
         '
