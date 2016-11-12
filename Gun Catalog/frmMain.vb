@@ -1,13 +1,18 @@
-﻿Public Class frmMain
+﻿Imports CatalogLibrary
+
+Public Class frmMain
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAddGun.Click
-        frmGun.ShowDialog()
+        Dim gunForm As New frmGun()
+        gunForm.ShowDialog()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAddAmmo.Click
-        frmAmmo.ShowDialog()
+        Dim ammoForm As New frmAmmo()
+        ammoForm.ShowDialog()
     End Sub
 
     Private Sub btnViewInventory_Click(sender As Object, e As EventArgs) Handles btnViewInventory.Click
-        frmInventory.ShowDialog()
+        Dim inventoryForm As New frmInventory()
+        inventoryForm.ShowDialog()
     End Sub
 End Class

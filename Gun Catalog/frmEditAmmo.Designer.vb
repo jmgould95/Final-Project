@@ -22,8 +22,16 @@ Partial Class frmEditAmmo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'frmEditAmmo
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(282, 253)
+        Me.Name = "frmEditAmmo"
         Me.Text = "frmEditAmmo"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

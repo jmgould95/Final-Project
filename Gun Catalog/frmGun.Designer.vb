@@ -31,14 +31,16 @@ Partial Class frmGun
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.radShotGun = New System.Windows.Forms.RadioButton()
+        Me.radRifle = New System.Windows.Forms.RadioButton()
         Me.radPistol = New System.Windows.Forms.RadioButton()
         Me.btnAddGun = New System.Windows.Forms.Button()
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.lstAmmo = New System.Windows.Forms.ListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnAmmunition = New System.Windows.Forms.Button()
+        Me.txtSN = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -66,20 +68,20 @@ Partial Class frmGun
         '
         Me.txtBrand.Location = New System.Drawing.Point(82, 7)
         Me.txtBrand.Name = "txtBrand"
-        Me.txtBrand.Size = New System.Drawing.Size(100, 22)
+        Me.txtBrand.Size = New System.Drawing.Size(161, 22)
         Me.txtBrand.TabIndex = 2
         '
         'txtModel
         '
         Me.txtModel.Location = New System.Drawing.Point(82, 45)
         Me.txtModel.Name = "txtModel"
-        Me.txtModel.Size = New System.Drawing.Size(100, 22)
+        Me.txtModel.Size = New System.Drawing.Size(161, 22)
         Me.txtModel.TabIndex = 3
         '
         'dtpDatePurchased
         '
         Me.dtpDatePurchased.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDatePurchased.Location = New System.Drawing.Point(128, 87)
+        Me.dtpDatePurchased.Location = New System.Drawing.Point(128, 110)
         Me.dtpDatePurchased.Name = "dtpDatePurchased"
         Me.dtpDatePurchased.Size = New System.Drawing.Size(115, 22)
         Me.dtpDatePurchased.TabIndex = 4
@@ -87,7 +89,7 @@ Partial Class frmGun
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 92)
+        Me.Label3.Location = New System.Drawing.Point(12, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 17)
         Me.Label3.TabIndex = 5
@@ -110,37 +112,37 @@ Partial Class frmGun
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton2)
-        Me.GroupBox2.Controls.Add(Me.RadioButton1)
+        Me.GroupBox2.Controls.Add(Me.radShotGun)
+        Me.GroupBox2.Controls.Add(Me.radRifle)
         Me.GroupBox2.Controls.Add(Me.radPistol)
-        Me.GroupBox2.Location = New System.Drawing.Point(15, 115)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 138)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(253, 72)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Type"
         '
-        'RadioButton2
+        'radShotGun
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(139, 22)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(89, 21)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Shot Gun"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.radShotGun.AutoSize = True
+        Me.radShotGun.Location = New System.Drawing.Point(139, 22)
+        Me.radShotGun.Name = "radShotGun"
+        Me.radShotGun.Size = New System.Drawing.Size(89, 21)
+        Me.radShotGun.TabIndex = 2
+        Me.radShotGun.TabStop = True
+        Me.radShotGun.Text = "Shot Gun"
+        Me.radShotGun.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'radRifle
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(76, 22)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(57, 21)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Rifle"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radRifle.AutoSize = True
+        Me.radRifle.Location = New System.Drawing.Point(76, 22)
+        Me.radRifle.Name = "radRifle"
+        Me.radRifle.Size = New System.Drawing.Size(57, 21)
+        Me.radRifle.TabIndex = 1
+        Me.radRifle.TabStop = True
+        Me.radRifle.Text = "Rifle"
+        Me.radRifle.UseVisualStyleBackColor = True
         '
         'radPistol
         '
@@ -176,6 +178,7 @@ Partial Class frmGun
         '
         Me.lstAmmo.FormattingEnabled = True
         Me.lstAmmo.ItemHeight = 16
+        Me.lstAmmo.Items.AddRange(New Object() {"9MM"})
         Me.lstAmmo.Location = New System.Drawing.Point(7, 29)
         Me.lstAmmo.Name = "lstAmmo"
         Me.lstAmmo.Size = New System.Drawing.Size(356, 196)
@@ -201,11 +204,29 @@ Partial Class frmGun
         Me.btnAmmunition.Text = "Add Ammunition"
         Me.btnAmmunition.UseVisualStyleBackColor = True
         '
+        'txtSN
+        '
+        Me.txtSN.Location = New System.Drawing.Point(82, 82)
+        Me.txtSN.Name = "txtSN"
+        Me.txtSN.Size = New System.Drawing.Size(161, 22)
+        Me.txtSN.TabIndex = 14
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(12, 85)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 17)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Serial #"
+        '
         'frmGun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 538)
+        Me.Controls.Add(Me.txtSN)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnAddGun)
@@ -238,12 +259,14 @@ Partial Class frmGun
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblStatus As ToolStripStatusLabel
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents radRifle As RadioButton
     Friend WithEvents radPistol As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents radShotGun As RadioButton
     Friend WithEvents btnAddGun As Button
     Friend WithEvents btnReturn As Button
     Friend WithEvents lstAmmo As ListBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnAmmunition As Button
+    Friend WithEvents txtSN As TextBox
+    Friend WithEvents Label4 As Label
 End Class
