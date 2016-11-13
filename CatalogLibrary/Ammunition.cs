@@ -8,5 +8,83 @@ namespace CatalogLibrary
 {
     class Ammunition
     {
+        private string mBrand;
+        private int mGrain;
+        private string mCaliber;
+        private DateTime mPurchaseDate;
+        private int mQuantity;
+
+        public Ammunition(string pBrand, string pCaliber, int pGrain, DateTime pPurchased, int pQuantity)
+        {
+           mBrand = pBrand;
+            mGrain = pGrain;
+            mCaliber = pCaliber;
+            mPurchaseDate = pPurchased;
+            mQuantity = pQuantity;
+        }
+        public string Brand
+        {
+            get
+            {
+                return mBrand;
+            }
+
+            set
+            {
+                mBrand = value;
+            }
+        }
+
+        public int Grain
+        {
+            get
+            {
+                return mGrain;
+            }
+
+            set
+            {
+                mGrain = value;
+            }
+        }
+
+        public string Caliber
+        {
+            get
+            {
+                return mCaliber;
+            }
+
+            set
+            {
+                mCaliber = value;
+            }
+        }
+
+        public DateTime PurchaseDate
+        {
+            get
+            {
+                return mPurchaseDate;
+            }
+
+            set
+            {
+                mPurchaseDate = value;
+            }
+        }
+
+        public int Quantity
+        {
+            get
+            {
+                return mQuantity;
+            }
+
+            set
+            {
+                mQuantity = value;
+            }
+        }
     }
 }
