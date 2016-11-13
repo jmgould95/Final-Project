@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace CatalogLibrary
 {
-    class Ammunition
+   public class Ammunition
     {
         private string mBrand;
         private int mGrain;
         private string mCaliber;
         private DateTime mPurchaseDate;
         private int mQuantity;
-        private int mGunID;
+        private string mType;
 
-        public Ammunition(string pBrand, string pCaliber, int pGrain, DateTime pPurchased, int pQuantity, int pGunID)
+        public Ammunition(string pBrand, string pCaliber, int pGrain, DateTime pPurchased, int pQuantity, string pType)
         {
            mBrand = pBrand;
             mGrain = pGrain;
             mCaliber = pCaliber;
             mPurchaseDate = pPurchased;
             mQuantity = pQuantity;
-            mGunID = pGunID;
+            mType = pType;
         }
         public string Brand
         {
@@ -89,16 +89,16 @@ namespace CatalogLibrary
             }
         }
 
-        public int GunID
+        public string Type
         {
             get
             {
-                return mGunID;
+                return mType;
             }
 
             set
             {
-                mGunID = value;
+                mType = value;
             }
         }
     }
