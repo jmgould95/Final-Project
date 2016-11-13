@@ -13,14 +13,16 @@ namespace CatalogLibrary
         private string mCaliber;
         private DateTime mPurchaseDate;
         private int mQuantity;
+        private int mGunID;
 
-        public Ammunition(string pBrand, string pCaliber, int pGrain, DateTime pPurchased, int pQuantity)
+        public Ammunition(string pBrand, string pCaliber, int pGrain, DateTime pPurchased, int pQuantity, int pGunID)
         {
            mBrand = pBrand;
             mGrain = pGrain;
             mCaliber = pCaliber;
             mPurchaseDate = pPurchased;
             mQuantity = pQuantity;
+            mGunID = pGunID;
         }
         public string Brand
         {
@@ -84,6 +86,19 @@ namespace CatalogLibrary
             set
             {
                 mQuantity = value;
+            }
+        }
+
+        public int GunID
+        {
+            get
+            {
+                return mGunID;
+            }
+
+            set
+            {
+                mGunID = value;
             }
         }
     }

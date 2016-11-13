@@ -18,16 +18,16 @@ namespace CatalogLibrary
 
         public Gun(string pMake, string pModel, string pSerialNum, string pType, DateTime pPurchaseDate, int pAmmoID)
         {
-            MMake = pMake;
-            MModel = pModel;
-            MSerialNum = pSerialNum;
-            MType = pType;
-            MPurchaseDate = pPurchaseDate;
-            MAmmoID = pAmmoID;
+            mMake = pMake;
+           mModel = pModel;
+            mSerialNum = pSerialNum;
+            mType = pType;
+            mPurchaseDate = pPurchaseDate;
+            mAmmoID = pAmmoID;
 
         }
 
-        public string MMake
+        public string Make
         {
             get
             {
@@ -40,11 +40,11 @@ namespace CatalogLibrary
             }
         }
 
-        public string MModel
+        public string Model
         {
             get
             {
-                return mModel;
+                return Model;
             }
 
             set
@@ -53,7 +53,7 @@ namespace CatalogLibrary
             }
         }
 
-        public string MType
+        public string Type
         {
             get
             {
@@ -66,7 +66,7 @@ namespace CatalogLibrary
             }
         }
 
-        public DateTime MPurchaseDate
+        public DateTime PurchaseDate
         {
             get
             {
@@ -79,7 +79,7 @@ namespace CatalogLibrary
             }
         }
 
-        public string MSerialNum
+        public string SerialNum
         {
             get
             {
@@ -92,7 +92,7 @@ namespace CatalogLibrary
             }
         }
 
-        public int MAmmoID
+        public int AmmoID
         {
             get
             {
