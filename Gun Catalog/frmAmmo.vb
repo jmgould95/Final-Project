@@ -35,7 +35,7 @@ Public Class frmAmmo
             txtCaliber.Focus()
             Return
         Else
-            brand = txtCaliber.Text
+            caliber = txtCaliber.Text
 
         End If
 
