@@ -155,6 +155,9 @@
     <EmbeddedResource Include="frmEditAmmo.resx">
       <DependentUpon>frmEditAmmo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditGun.resx">
+      <DependentUpon>frmEditGun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGun.resx">
       <DependentUpon>frmGun.vb</DependentUpon>
     </EmbeddedResource>

@@ -22,8 +22,31 @@ Partial Class frmEditGun
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.dgvGuns = New System.Windows.Forms.DataGridView()
+        CType(Me.dgvGuns, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'dgvGuns
+        '
+        Me.dgvGuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGuns.Location = New System.Drawing.Point(2, 5)
+        Me.dgvGuns.Name = "dgvGuns"
+        Me.dgvGuns.RowTemplate.Height = 24
+        Me.dgvGuns.Size = New System.Drawing.Size(589, 279)
+        Me.dgvGuns.TabIndex = 0
+        '
+        'frmEditGun
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(595, 479)
+        Me.Controls.Add(Me.dgvGuns)
+        Me.Name = "frmEditGun"
         Me.Text = "frmEditGun"
+        CType(Me.dgvGuns, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents dgvGuns As DataGridView
 End Class
