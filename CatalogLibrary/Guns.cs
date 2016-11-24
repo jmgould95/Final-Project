@@ -4,19 +4,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Data;
+
 namespace CatalogLibrary
 {
-    public class Gun
+    public class Guns
     {
         //Use the following for testing within Visual Studio
-        private const string dbPOPULATION = "Data Source = ../../Population.db; Version = 3";
+        private const string dbGun = "Data Source = C:/Users/Jimmy/Documents/Advanced Visual Basic/FinalProject_JimmyGould/CatalogLibrary/GunDB.db; Version = 3";
 
         //Use the following for deployment.
         //private const string dbEMPLOYEES = "Data Source = CSIndustries.db; Version = 3";
 
-        SQLiteConnection connection = new SQLiteConnection(dbPOPULATION);
+        SQLiteConnection connection = new SQLiteConnection(dbGun);
         SQLiteDataAdapter dataAdapter;
         SQLiteCommand command;
+
+        DataSet ds = new DataSet();
+        String sql;
+
+        public DataSet ExecuteQuery(string sql)
+        {
+            ds.Clear();
+            try
+            {
+                connection.Open();
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(ds);
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+            }
+
+            return ds;
+        }
+
+        public DataView DisplayTable()
+        {
+            connection.Open();
+            DataSet dataSet = new DataSet();
+
+            sql = "Select * From Gun ORDER BY Make";
+
+            dataAdapter = new SQLiteDataAdapter(sql, connection);
+            dataAdapter.Fill(dataSet);
+            connection.Close();
+            return dataSet.Tables[0].DefaultView;
+        }
         //private string mMake;
         //private string mModel;
         //private string mType;

@@ -2,9 +2,9 @@
 
 Public Class frmGun
     'The list and the gun object might be taken out when the database is created
-    Dim Gun As Gun
+    Dim Gun As Guns
 
-    Dim gunList As List(Of Gun) 'a list of gun objects
+    Dim gunList As List(Of Guns) 'a list of gun objects
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
@@ -56,16 +56,16 @@ Public Class frmGun
 
         'checks for gun type
         If radPistol.Checked Then
-            Type = "Pistol"
+            type = "Pistol"
         ElseIf (radRifle.Checked) Then
-            Type = "Rifle"
+            type = "Rifle"
         Else
-            Type = "Shot Gun"
+            type = "Shot Gun"
         End If
 
         'create a new gun object
-        Gun = New Gun(make, model, serialNum, type, purchased, ammoID)
-        gunList.Add(Gun)
+        'Gun = New Guns(make, model, serialNum, type, purchased, ammoID)
+        'gunList.Add(Gun)
 
 
         lblStatus.Text = "Your gun was added"

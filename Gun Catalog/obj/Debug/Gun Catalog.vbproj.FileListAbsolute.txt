@@ -10,3 +10,18 @@ C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catal
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.exe
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.xml
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun Catalog.pdb
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\CatalogLibrary.dll
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\EntityFramework.dll
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\CatalogLibrary.pdb
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\EntityFramework.xml
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmAmmo.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmEditAmmo.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmEditGun.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmGun.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmInventory.resources
