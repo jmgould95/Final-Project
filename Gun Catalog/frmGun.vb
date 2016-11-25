@@ -2,7 +2,7 @@
 
 Public Class frmGun
     'The list and the gun object might be taken out when the database is created
-    Dim Gun As Guns
+    Dim Gun As New Guns
 
     Dim gunList As List(Of Guns) 'a list of gun objects
 
@@ -66,9 +66,11 @@ Public Class frmGun
         'create a new gun object
         'Gun = New Guns(make, model, serialNum, type, purchased, ammoID)
         'gunList.Add(Gun)
+        Dim sql As String = "INSERT INTO Gun (Make, Model,Type, SerialNumber, AmmoId) Values(" +
+                    "'" + make + "','" + model + "','" + type + "','"
+        Gun.ExecuteQuery(sql)
 
-
-        lblStatus.Text = "Your gun was added"
+        lblStatus.Text = Gun.LastStatus
     End Sub
 
     Private Sub frmGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load

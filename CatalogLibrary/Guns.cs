@@ -10,6 +10,7 @@ namespace CatalogLibrary
 {
     public class Guns
     {
+        public string LastStatus;
         //Use the following for testing within Visual Studio
         private const string dbGun = "Data Source = C:/Users/Jimmy/Documents/Advanced Visual Basic/FinalProject_JimmyGould/CatalogLibrary/GunDB.db; Version = 3";
 
@@ -26,16 +27,20 @@ namespace CatalogLibrary
         public DataSet ExecuteQuery(string sql)
         {
             ds.Clear();
+            sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, AmmoId) Values(" +
+                    "'test',' test  ',' Pistol','12346'," + 2;
             try
             {
                 connection.Open();
                 dataAdapter = new SQLiteDataAdapter(sql, connection);
                 dataAdapter.Fill(ds);
                 connection.Close();
+                LastStatus = "Succeed";
             }
             catch (Exception ex)
             {
                 ds = null;
+                LastStatus = "Fail";
             }
 
             return ds;
