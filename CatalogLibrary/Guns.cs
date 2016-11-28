@@ -28,7 +28,7 @@ namespace CatalogLibrary
         {
             ds.Clear();
             sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, AmmoId) Values(" +
-                    "'test',' test  ',' Pistol','12346'," + 2;
+                    "'test',' test  ',' Pistol','12346'," + 25+")";
             try
             {
                 connection.Open();
