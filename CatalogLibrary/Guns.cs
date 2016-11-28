@@ -51,8 +51,9 @@ namespace CatalogLibrary
             connection.Open();
             DataSet dataSet = new DataSet();
 
-            sql = "Select * From Gun ORDER BY Make";
-
+            //sql = "Select * From Gun ORDER BY Make";
+            //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
+            sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
             dataAdapter = new SQLiteDataAdapter(sql, connection);
             dataAdapter.Fill(dataSet);
             connection.Close();
