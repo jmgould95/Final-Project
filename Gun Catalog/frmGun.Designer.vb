@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmGun
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmGun
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,14 +36,15 @@ Partial Class frmGun
         Me.radPistol = New System.Windows.Forms.RadioButton()
         Me.btnAddGun = New System.Windows.Forms.Button()
         Me.btnReturn = New System.Windows.Forms.Button()
-        Me.lstAmmo = New System.Windows.Forms.ListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnAmmunition = New System.Windows.Forms.Button()
         Me.txtSN = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.dgvAmmo = New System.Windows.Forms.DataGridView()
         Me.StatusStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.dgvAmmo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -174,20 +175,10 @@ Partial Class frmGun
         Me.btnReturn.Text = "Exit Form"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
-        'lstAmmo
-        '
-        Me.lstAmmo.FormattingEnabled = True
-        Me.lstAmmo.ItemHeight = 16
-        Me.lstAmmo.Items.AddRange(New Object() {"9MM"})
-        Me.lstAmmo.Location = New System.Drawing.Point(7, 29)
-        Me.lstAmmo.Name = "lstAmmo"
-        Me.lstAmmo.Size = New System.Drawing.Size(356, 196)
-        Me.lstAmmo.TabIndex = 11
-        '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dgvAmmo)
         Me.GroupBox1.Controls.Add(Me.btnAmmunition)
-        Me.GroupBox1.Controls.Add(Me.lstAmmo)
         Me.GroupBox1.Location = New System.Drawing.Point(15, 216)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(369, 268)
@@ -220,6 +211,15 @@ Partial Class frmGun
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Serial #"
         '
+        'dgvAmmo
+        '
+        Me.dgvAmmo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAmmo.Location = New System.Drawing.Point(7, 21)
+        Me.dgvAmmo.Name = "dgvAmmo"
+        Me.dgvAmmo.RowTemplate.Height = 24
+        Me.dgvAmmo.Size = New System.Drawing.Size(346, 214)
+        Me.dgvAmmo.TabIndex = 14
+        '
         'frmGun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -245,6 +245,7 @@ Partial Class frmGun
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.dgvAmmo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,9 +265,9 @@ Partial Class frmGun
     Friend WithEvents radShotGun As RadioButton
     Friend WithEvents btnAddGun As Button
     Friend WithEvents btnReturn As Button
-    Friend WithEvents lstAmmo As ListBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnAmmunition As Button
     Friend WithEvents txtSN As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents dgvAmmo As DataGridView
 End Class

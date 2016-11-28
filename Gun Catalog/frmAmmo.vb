@@ -1,9 +1,7 @@
 ﻿Imports CatalogLibrary
 
 Public Class frmAmmo
-    Dim Ammo As Ammunition
 
-    Dim AmmoList As List(Of Ammunition) 'a list of gun objects
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
@@ -67,8 +65,6 @@ Public Class frmAmmo
             lblStatus.Text = "You cannot have a negative quantity"
         End If
 
-        Ammo = New Ammunition(brand, caliber, grain, purchaseDate, quantity, type)
-        AmmoList.Add(Ammo)
-        lblStatus.Text = "Ammo Added to database"
+
     End Sub
 End Class

@@ -3,6 +3,7 @@
 Public Class frmGun
     'The list and the gun object might be taken out when the database is created
     Dim Gun As New Guns
+    Dim Ammo As New Ammunition
 
     Dim gunList As List(Of Guns) 'a list of gun objects
 
@@ -47,12 +48,12 @@ Public Class frmGun
         End If
 
         'gets ammo type and ID
-        If lstAmmo.SelectedIndex < 0 Then
-            lblStatus.Text = "You must select an ammunition"
-            Return
-        Else
-            ammoID = lstAmmo.SelectedIndex
-        End If
+        'If lstAmmo.SelectedIndex < 0 Then
+        '    lblStatus.Text = "You must select an ammunition"
+        '    Return
+        'Else
+        '    ammoID = lstAmmo.SelectedIndex
+        'End If
 
         'checks for gun type
         If radPistol.Checked Then
@@ -75,5 +76,6 @@ Public Class frmGun
 
     Private Sub frmGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'set the data source of the list box to the database of ammo
+        dgvAmmo.DataSource = Ammo.DisplayTable
     End Sub
 End Class
