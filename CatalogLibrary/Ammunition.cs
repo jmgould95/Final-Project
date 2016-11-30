@@ -27,8 +27,8 @@ namespace CatalogLibrary
         public DataSet ExecuteQuery(string sql)
         {
             ds.Clear();
-            sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, AmmoId) Values(" +
-                    "'test',' test  ',' Pistol','12346'," + 25 + ")";
+            //sql = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values(" +
+            //        "'test',"+ 40 +",'50','11/29/2016'," + 25 + ",'fmj')";
             try
             {
                 connection.Open();
@@ -51,7 +51,7 @@ namespace CatalogLibrary
             connection.Open();
             DataSet dataSet = new DataSet();
 
-            sql = "Select Caliber From Ammo ORDER BY Id";
+            sql = "Select Caliber From Ammo Order by Id";
             //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
             //sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
             dataAdapter = new SQLiteDataAdapter(sql, connection);

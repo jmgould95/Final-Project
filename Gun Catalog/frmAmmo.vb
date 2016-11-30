@@ -1,7 +1,7 @@
 ﻿Imports CatalogLibrary
 
 Public Class frmAmmo
-
+    Dim Ammo As New Ammunition
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
@@ -16,7 +16,7 @@ Public Class frmAmmo
         Dim caliber As String
         Dim grain As Integer
         Dim quantity As Integer
-        Dim purchaseDate As DateTime = dtpDatePurchased.Value.Date
+        Dim purchaseDate As String = dtpDatePurchased.Value.Date.ToString
         Dim type As String
 
         If txtBrand.Text.Trim() = "" Then
@@ -65,6 +65,9 @@ Public Class frmAmmo
             lblStatus.Text = "You cannot have a negative quantity"
         End If
 
+        Dim sql As String = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values('test'," + grain.ToString + ",'" + caliber + "','" + purchaseDate + "'," + quantity.ToString + ",'" + type + "')"
 
+        Ammo.ExecuteQuery(sql)
+        lblStatus.Text = Ammo.LastStatus
     End Sub
 End Class

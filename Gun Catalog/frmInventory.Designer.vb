@@ -41,9 +41,9 @@ Partial Class frmInventory
         '
         'btnViewAmmo
         '
-        Me.btnViewAmmo.Location = New System.Drawing.Point(180, 336)
+        Me.btnViewAmmo.Location = New System.Drawing.Point(167, 336)
         Me.btnViewAmmo.Name = "btnViewAmmo"
-        Me.btnViewAmmo.Size = New System.Drawing.Size(91, 23)
+        Me.btnViewAmmo.Size = New System.Drawing.Size(104, 23)
         Me.btnViewAmmo.TabIndex = 1
         Me.btnViewAmmo.Text = "View Ammo"
         Me.btnViewAmmo.UseVisualStyleBackColor = True

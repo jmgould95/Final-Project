@@ -15,11 +15,14 @@ Public Class frmGun
         frmAmmo.ShowDialog()
     End Sub
 
+    'add button validates inputs and does sql to insert gun into database
     Private Sub btnAddGun_Click(sender As Object, e As EventArgs) Handles btnAddGun.Click
         Dim purchased As DateTime = dtpDatePurchased.Value.Date
         Dim make As String = ""
         Dim model As String = ""
         Dim type As String = ""
+        Dim purchaseDate As String = dtpDatePurchased.Value.Date.ToString()
+
         Dim serialNum As String = txtSN.Text
         Dim ammoID As Integer = 0
         Dim ammoIndex As Integer = dgvAmmo.CurrentCell.RowIndex
@@ -68,14 +71,18 @@ Public Class frmGun
             type = "Shot Gun"
         End If
 
-        'create a new gun object
-        'Gun = New Guns(make, model, serialNum, type, purchased, ammoID)
-        'gunList.Add(Gun)
-        Dim sql As String = "INSERT INTO Gun (Make, Model,Type, SerialNumber, AmmoId) Values(" +
-                    "'" + make + "','" + model + "','" + type + "','"
-        Gun.ExecuteQuery(sql)
 
-        lblStatus.Text = Gun.LastStatus
+        'string to add gun to database
+        'Dim sql As String = "INSERT INTO Gun (Make, Model, Type, SerialNumber, DatePurchased, AmmoId) Values( '" + make + "','" + model + "','" + type + "','" + serialNum + "','" + purchaseDate + "','" + ammoID.ToString + "')"
+
+        'Gun.ExecuteQuery(sql)
+        Gun.AddGun(make, model, type, purchaseDate, serialNum, ammoID)
+        If Gun.LastStatus = "Succeed" Then
+            lblStatus.Text = "Your gun was added"
+        Else
+            lblStatus.Text = "Failed to add gun to database"
+        End If
+
     End Sub
 
     Private Sub frmGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load

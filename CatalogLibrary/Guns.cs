@@ -28,8 +28,31 @@ namespace CatalogLibrary
         {
             ds.Clear();
             DateTime time = DateTime.Now;
-            sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, DatePurchased, AmmoId) Values(" +
-                    "'test',' test  ',' Pistol','12346','11/29/2016'," + 1 + ")";
+            //sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, DatePurchased, AmmoId) Values(" +
+            //        "'test',' test  ',' Pistol','12346','11/29/2016'," + 1 + ")";
+            try
+            {
+                connection.Open();
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(ds);
+                connection.Close();
+                LastStatus = "Succeed";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Fail";
+            }
+
+            return ds;
+        }
+
+        public DataSet AddGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId)
+        {
+            ds.Clear();
+            DateTime time = DateTime.Now;
+            sql = "INSERT INTO Gun (Make, Model, GunType, SerialNumber, DatePurchased, AmmoId) Values(" +
+                    "'"+pMake+"','"+pModel+  "','"+ pType+"','"+pSerialNum+"','"+pPurchaseDate+"'," + pAmmoId + ")";
             try
             {
                 connection.Open();
@@ -72,11 +95,20 @@ namespace CatalogLibrary
 
             //sql = "Select * From Gun ORDER BY Make";
             //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
-            sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
-            dataAdapter = new SQLiteDataAdapter(sql, connection);
-            dataAdapter.Fill(dataSet);
-            connection.Close();
-            return dataSet.Tables[0].DefaultView;
+            try
+            {
+                sql = "Select Make, Model, GunType, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(dataSet);
+                connection.Close();
+                return dataSet.Tables[0].DefaultView;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
         }
         //private string mMake;
         //private string mModel;
