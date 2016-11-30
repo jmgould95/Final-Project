@@ -27,8 +27,9 @@ namespace CatalogLibrary
         public DataSet ExecuteQuery(string sql)
         {
             ds.Clear();
-            //sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, AmmoId) Values(" +
-                    //"'test',' test  ',' Pistol','12346'," + 25+")";
+            DateTime time = DateTime.Now;
+            sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, DatePurchased, AmmoId) Values(" +
+                    "'test',' test  ',' Pistol','12346','11/29/2016'," + 1 + ")";
             try
             {
                 connection.Open();
