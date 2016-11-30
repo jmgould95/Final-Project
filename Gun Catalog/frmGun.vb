@@ -22,8 +22,12 @@ Public Class frmGun
         Dim type As String = ""
         Dim serialNum As String = txtSN.Text
         Dim ammoID As Integer = 0
-
+        Dim ammoIndex As Integer = dgvAmmo.CurrentCell.RowIndex
+        Dim selectedAmmo As String = dgvAmmo.Rows(ammoIndex).Cells(0).Value.ToString
+        'MessageBox.Show(dgvAmmo.Rows(ammoIndex).Cells(0).Value.ToString)
         'validates input
+        ammoID = Gun.AmmoId(selectedAmmo)
+        MessageBox.Show(ammoID.ToString)
         If txtBrand.Text.Trim() = "" Then
             lblStatus.Text = "You must input a brand"
             txtBrand.Focus()

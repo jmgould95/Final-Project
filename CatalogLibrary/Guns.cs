@@ -27,8 +27,8 @@ namespace CatalogLibrary
         public DataSet ExecuteQuery(string sql)
         {
             ds.Clear();
-            sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, AmmoId) Values(" +
-                    "'test',' test  ',' Pistol','12346'," + 25+")";
+            //sql = "INSERT INTO Gun (Make, Model, Type, SerialNumber, AmmoId) Values(" +
+                    //"'test',' test  ',' Pistol','12346'," + 25+")";
             try
             {
                 connection.Open();
@@ -46,6 +46,24 @@ namespace CatalogLibrary
             return ds;
         }
 
+        public int AmmoId(string pCaliber)
+        {
+            int caliber;
+            connection.Open();
+            DataSet dataSet = new DataSet();
+
+            sql = "Select Id From Ammo Where Caliber ='"+pCaliber+"'";
+            command = connection.CreateCommand();
+            command.CommandText = sql;
+
+
+           //object caliber =  command.ExecuteScalarAsync;
+           // int test = int.Parse(caliber);
+
+            caliber= Convert.ToInt32(command.ExecuteScalar());
+            connection.Close();
+            return caliber;
+        }
         public DataView DisplayTable()
         {
             connection.Open();
