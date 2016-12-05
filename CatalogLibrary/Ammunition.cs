@@ -23,12 +23,12 @@ namespace CatalogLibrary
 
         DataSet ds = new DataSet();
         String sql;
-
-        public DataSet ExecuteQuery(string sql)
+       
+        public DataSet ExecuteQuery(string pBrnad, string pCaliber, int pGrain, int pQuality, string pPurchaseDate, string pType)
         {
             ds.Clear();
-            //sql = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values(" +
-            //        "'test',"+ 40 +",'50','11/29/2016'," + 25 + ",'fmj')";
+            sql = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values(" +
+                    "'test'," + pGrain + ",'"+pCaliber+"','"+pPurchaseDate+"'," + pQuality + ",'"+pType+"')";
             try
             {
                 connection.Open();
@@ -46,6 +46,30 @@ namespace CatalogLibrary
             return ds;
         }
 
+        public DataSet UpdateAmmo(string pBrnad, string pCaliber, int pGrain, int pQuality, string pPurchaseDate, string pType, int pId)
+        {
+            ds.Clear();
+            DateTime time = DateTime.Now;
+            //sql = "Update Gun Set(Make, Model, GunType, SerialNumber, DatePurchased, AmmoId) Values(" +
+            //        "'" + pMake + "','" + pModel + "','" + pType + "','" + pSerialNum + "','" + pPurchaseDate + "'," + pAmmoId + ") Where Id = "+pId;
+            sql = "Update Ammo Set Brand ='" + pBrnad + "', Grain=" + pGrain + ", Caliber ='" + pCaliber +
+                "', PurchaseDate ='" + pPurchaseDate + "', Quantity = " + pQuality + ", Type ='" + pType + "' Where Id =" + pId + "";
+            try
+            {
+                connection.Open();
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(ds);
+                connection.Close();
+                LastStatus = "Ammo Updated";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Failed to update";
+            }
+
+            return ds;
+        }
         public DataView DisplayTable()
         {
             connection.Open();
@@ -59,7 +83,56 @@ namespace CatalogLibrary
             connection.Close();
             return dataSet.Tables[0].DefaultView;
         }
-        
+
+        public DataView FindAmmo(string pName)
+        {
+            connection.Open();
+            DataSet dataSet = new DataSet();
+
+            sql = "Select * From Ammo Where Brand ='"+pName+"'";
+            //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
+            //sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
+            dataAdapter = new SQLiteDataAdapter(sql, connection);
+            dataAdapter.Fill(dataSet);
+            connection.Close();
+            return dataSet.Tables[0].DefaultView;
+        }
+
+        public DataView DisplayAll()
+        {
+            connection.Open();
+            DataSet dataSet = new DataSet();
+
+            sql = "Select * From Ammo Order by Id";
+            //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
+            //sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
+            dataAdapter = new SQLiteDataAdapter(sql, connection);
+            dataAdapter.Fill(dataSet);
+            connection.Close();
+            return dataSet.Tables[0].DefaultView;
+        }
+
+        public bool DeleteAmmo(int pId)
+        {
+            ds.Clear();
+            sql = "Delete from Ammo Where Id ="+pId+"";
+            try
+            {
+                connection.Open();
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(ds);
+                connection.Close();
+                LastStatus = "Succeed";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Fail";
+                return false;
+            }
+
+            return true;
+        }
 
 
         //    private string mBrand;

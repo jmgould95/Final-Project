@@ -47,12 +47,61 @@ namespace CatalogLibrary
             return ds;
         }
 
-        public DataSet AddGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId)
+        public DataView FindByName(string pMake)
+        {
+            connection.Open();
+            DataSet dataSet = new DataSet();
+            DateTime time = DateTime.Now;
+            sql = "Select gunId, Make, Model, GunType, Caliber, SerialNumber, PurchaseDate From Gun AS G  Join Ammo As A ON G.AmmoId=A.Id Where G.Make ='" + pMake + "'";
+            //sql = "Select * from Gun Where Make = '" + pMake + "'";
+            try
+            {
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(dataSet);
+                connection.Close();
+                LastStatus = "Succeed";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Fail";
+            }
+            
+            return dataSet.Tables[0].DefaultView;
+        }
+
+
+
+            public DataSet AddGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId)
         {
             ds.Clear();
             DateTime time = DateTime.Now;
             sql = "INSERT INTO Gun (Make, Model, GunType, SerialNumber, DatePurchased, AmmoId) Values(" +
                     "'"+pMake+"','"+pModel+  "','"+ pType+"','"+pSerialNum+"','"+pPurchaseDate+"'," + pAmmoId + ")";
+            try
+            {
+                connection.Open();
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(ds);
+                connection.Close();
+                LastStatus = "Succeed";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Fail";
+            }
+
+            return ds;
+        }
+        public DataSet UpdateGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId, int pId)
+        {
+            ds.Clear();
+            DateTime time = DateTime.Now;
+            //sql = "Update Gun Set(Make, Model, GunType, SerialNumber, DatePurchased, AmmoId) Values(" +
+            //        "'" + pMake + "','" + pModel + "','" + pType + "','" + pSerialNum + "','" + pPurchaseDate + "'," + pAmmoId + ") Where Id = "+pId;
+            sql = "Update Gun Set Make ='" + pMake + "', Model='"+pModel+ "', GunType ='" + pType+ 
+                "', SerialNumber ='" + pSerialNum+ "', DatePurchased = '"+pPurchaseDate+ "', AmmoId ="+pAmmoId+" Where gunId =" + pId+"";
             try
             {
                 connection.Open();
@@ -97,7 +146,7 @@ namespace CatalogLibrary
             //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
             try
             {
-                sql = "Select Make, Model, GunType, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
+                sql = "Select gunId, Make, Model, GunType, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
                 dataAdapter = new SQLiteDataAdapter(sql, connection);
                 dataAdapter.Fill(dataSet);
                 connection.Close();
@@ -110,6 +159,29 @@ namespace CatalogLibrary
             }
             
         }
+        public bool DeleteGun(int pId)
+        {
+            ds.Clear();
+            sql = "Delete from Gun Where gunId =" + pId + "";
+            try
+            {
+                connection.Open();
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(ds);
+                connection.Close();
+                LastStatus = "Succeed";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Fail";
+
+                return false;
+            }
+
+            return true;
+        }
+
         //private string mMake;
         //private string mModel;
         //private string mType;

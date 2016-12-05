@@ -65,9 +65,13 @@ Public Class frmAmmo
             lblStatus.Text = "You cannot have a negative quantity"
         End If
 
-        Dim sql As String = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values('test'," + grain.ToString + ",'" + caliber + "','" + purchaseDate + "'," + quantity.ToString + ",'" + type + "')"
+        'Dim sql As String = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values('test'," + grain.ToString + ",'" + caliber + "','" + purchaseDate + "'," + quantity.ToString + ",'" + type + "')"
 
-        Ammo.ExecuteQuery(sql)
+        Ammo.ExecuteQuery(brand, caliber, grain, quantity, purchaseDate, type)
         lblStatus.Text = Ammo.LastStatus
     End Sub
+
+    'Private Sub frmAmmo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+    '    Gunfrm.dgvAmmo.DataSource = Ammo.DisplayTable
+    'End Sub
 End Class

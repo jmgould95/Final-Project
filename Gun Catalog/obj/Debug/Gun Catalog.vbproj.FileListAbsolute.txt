@@ -22,6 +22,6 @@ C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catal
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\bin\Debug\System.Data.SQLite.xml
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmAmmo.resources
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmEditAmmo.resources
-C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmEditGun.resources
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmGun.resources
 C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmInventory.resources
+C:\Users\Jimmy\Documents\Advanced Visual Basic\FinalProject_JimmyGould\Gun Catalog\obj\Debug\Gun_Catalog.frmEditGun.resources

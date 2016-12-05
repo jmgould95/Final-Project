@@ -37,10 +37,11 @@ Partial Class frmGun
         Me.btnAddGun = New System.Windows.Forms.Button()
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dgvAmmo = New System.Windows.Forms.DataGridView()
         Me.btnAmmunition = New System.Windows.Forms.Button()
         Me.txtSN = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.dgvAmmo = New System.Windows.Forms.DataGridView()
+        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -70,14 +71,14 @@ Partial Class frmGun
         Me.txtBrand.Location = New System.Drawing.Point(82, 7)
         Me.txtBrand.Name = "txtBrand"
         Me.txtBrand.Size = New System.Drawing.Size(161, 22)
-        Me.txtBrand.TabIndex = 2
+        Me.txtBrand.TabIndex = 0
         '
         'txtModel
         '
         Me.txtModel.Location = New System.Drawing.Point(82, 45)
         Me.txtModel.Name = "txtModel"
         Me.txtModel.Size = New System.Drawing.Size(161, 22)
-        Me.txtModel.TabIndex = 3
+        Me.txtModel.TabIndex = 1
         '
         'dtpDatePurchased
         '
@@ -85,7 +86,7 @@ Partial Class frmGun
         Me.dtpDatePurchased.Location = New System.Drawing.Point(128, 110)
         Me.dtpDatePurchased.Name = "dtpDatePurchased"
         Me.dtpDatePurchased.Size = New System.Drawing.Size(115, 22)
-        Me.dtpDatePurchased.TabIndex = 4
+        Me.dtpDatePurchased.TabIndex = 3
         '
         'Label3
         '
@@ -119,7 +120,7 @@ Partial Class frmGun
         Me.GroupBox2.Location = New System.Drawing.Point(15, 138)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(253, 72)
-        Me.GroupBox2.TabIndex = 8
+        Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Type"
         '
@@ -162,7 +163,7 @@ Partial Class frmGun
         Me.btnAddGun.Location = New System.Drawing.Point(410, 480)
         Me.btnAddGun.Name = "btnAddGun"
         Me.btnAddGun.Size = New System.Drawing.Size(94, 23)
-        Me.btnAddGun.TabIndex = 9
+        Me.btnAddGun.TabIndex = 6
         Me.btnAddGun.Text = "Add Gun"
         Me.btnAddGun.UseVisualStyleBackColor = True
         '
@@ -171,24 +172,34 @@ Partial Class frmGun
         Me.btnReturn.Location = New System.Drawing.Point(510, 480)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(94, 23)
-        Me.btnReturn.TabIndex = 10
+        Me.btnReturn.TabIndex = 7
         Me.btnReturn.Text = "Exit Form"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnRefresh)
         Me.GroupBox1.Controls.Add(Me.dgvAmmo)
         Me.GroupBox1.Controls.Add(Me.btnAmmunition)
         Me.GroupBox1.Location = New System.Drawing.Point(15, 216)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(369, 268)
-        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Ammunition"
         '
+        'dgvAmmo
+        '
+        Me.dgvAmmo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAmmo.Location = New System.Drawing.Point(7, 21)
+        Me.dgvAmmo.Name = "dgvAmmo"
+        Me.dgvAmmo.RowTemplate.Height = 24
+        Me.dgvAmmo.Size = New System.Drawing.Size(346, 214)
+        Me.dgvAmmo.TabIndex = 14
+        '
         'btnAmmunition
         '
-        Me.btnAmmunition.Location = New System.Drawing.Point(113, 239)
+        Me.btnAmmunition.Location = New System.Drawing.Point(28, 241)
         Me.btnAmmunition.Name = "btnAmmunition"
         Me.btnAmmunition.Size = New System.Drawing.Size(127, 23)
         Me.btnAmmunition.TabIndex = 13
@@ -200,7 +211,7 @@ Partial Class frmGun
         Me.txtSN.Location = New System.Drawing.Point(82, 82)
         Me.txtSN.Name = "txtSN"
         Me.txtSN.Size = New System.Drawing.Size(161, 22)
-        Me.txtSN.TabIndex = 14
+        Me.txtSN.TabIndex = 2
         '
         'Label4
         '
@@ -211,14 +222,14 @@ Partial Class frmGun
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Serial #"
         '
-        'dgvAmmo
+        'btnRefresh
         '
-        Me.dgvAmmo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAmmo.Location = New System.Drawing.Point(7, 21)
-        Me.dgvAmmo.Name = "dgvAmmo"
-        Me.dgvAmmo.RowTemplate.Height = 24
-        Me.dgvAmmo.Size = New System.Drawing.Size(346, 214)
-        Me.dgvAmmo.TabIndex = 14
+        Me.btnRefresh.Location = New System.Drawing.Point(177, 241)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(105, 23)
+        Me.btnRefresh.TabIndex = 15
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
         '
         'frmGun
         '
@@ -239,7 +250,7 @@ Partial Class frmGun
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmGun"
-        Me.Text = "frmGun"
+        Me.Text = "Add Gun"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -270,4 +281,5 @@ Partial Class frmGun
     Friend WithEvents txtSN As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents dgvAmmo As DataGridView
+    Friend WithEvents btnRefresh As Button
 End Class

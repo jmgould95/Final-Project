@@ -4,6 +4,13 @@ Public Class frmGun
     'The list and the gun object might be taken out when the database is created
     Dim Gun As New Guns
     Dim Ammo As New Ammunition
+    Dim AmmoFrm As New frmAmmo
+    'Public Sub DataS()
+    '    dgvAmmo.DataSource = Ammo.DisplayTable
+    'End Sub
+
+
+
 
     Dim gunList As List(Of Guns) 'a list of gun objects
 
@@ -12,7 +19,8 @@ Public Class frmGun
     End Sub
 
     Private Sub btnAmmunition_Click(sender As Object, e As EventArgs) Handles btnAmmunition.Click
-        frmAmmo.ShowDialog()
+        AmmoFrm.ShowDialog()
+
     End Sub
 
     'add button validates inputs and does sql to insert gun into database
@@ -30,7 +38,7 @@ Public Class frmGun
         'MessageBox.Show(dgvAmmo.Rows(ammoIndex).Cells(0).Value.ToString)
         'validates input
         ammoID = Gun.AmmoId(selectedAmmo)
-        MessageBox.Show(ammoID.ToString)
+        'MessageBox.Show(ammoID.ToString)
         If txtBrand.Text.Trim() = "" Then
             lblStatus.Text = "You must input a brand"
             txtBrand.Focus()
@@ -87,6 +95,15 @@ Public Class frmGun
 
     Private Sub frmGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'set the data source of the list box to the database of ammo
+        dgvAmmo.DataSource = Ammo.DisplayTable
+    End Sub
+
+
+    Private Sub dgvAmmo_DataMemberChanged(sender As Object, e As EventArgs) Handles dgvAmmo.DataMemberChanged
+        MessageBox.Show("Wroking")
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         dgvAmmo.DataSource = Ammo.DisplayTable
     End Sub
 End Class

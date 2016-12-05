@@ -29,6 +29,7 @@ Partial Class frmAmmo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BulletType = New System.Windows.Forms.GroupBox()
+        Me.radShotgun = New System.Windows.Forms.RadioButton()
         Me.radFMJ = New System.Windows.Forms.RadioButton()
         Me.radHollowPoint = New System.Windows.Forms.RadioButton()
         Me.btnAddAmmo = New System.Windows.Forms.Button()
@@ -37,7 +38,6 @@ Partial Class frmAmmo
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtGrain = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.radShotgun = New System.Windows.Forms.RadioButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.BulletType.SuspendLayout()
@@ -58,7 +58,7 @@ Partial Class frmAmmo
         Me.dtpDatePurchased.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDatePurchased.Location = New System.Drawing.Point(122, 180)
         Me.dtpDatePurchased.Name = "dtpDatePurchased"
-        Me.dtpDatePurchased.Size = New System.Drawing.Size(90, 22)
+        Me.dtpDatePurchased.Size = New System.Drawing.Size(105, 22)
         Me.dtpDatePurchased.TabIndex = 10
         '
         'txtCaliber
@@ -105,9 +105,20 @@ Partial Class frmAmmo
         Me.BulletType.TabStop = False
         Me.BulletType.Text = "Bullet Type"
         '
+        'radShotgun
+        '
+        Me.radShotgun.AutoSize = True
+        Me.radShotgun.Location = New System.Drawing.Point(146, 52)
+        Me.radShotgun.Name = "radShotgun"
+        Me.radShotgun.Size = New System.Drawing.Size(82, 21)
+        Me.radShotgun.TabIndex = 2
+        Me.radShotgun.Text = "Shotgun"
+        Me.radShotgun.UseVisualStyleBackColor = True
+        '
         'radFMJ
         '
         Me.radFMJ.AutoSize = True
+        Me.radFMJ.Checked = True
         Me.radFMJ.Location = New System.Drawing.Point(6, 30)
         Me.radFMJ.Name = "radFMJ"
         Me.radFMJ.Size = New System.Drawing.Size(134, 21)
@@ -123,7 +134,6 @@ Partial Class frmAmmo
         Me.radHollowPoint.Name = "radHollowPoint"
         Me.radHollowPoint.Size = New System.Drawing.Size(106, 21)
         Me.radHollowPoint.TabIndex = 0
-        Me.radHollowPoint.TabStop = True
         Me.radHollowPoint.Text = "Hollow Point"
         Me.radHollowPoint.UseVisualStyleBackColor = True
         '
@@ -177,24 +187,13 @@ Partial Class frmAmmo
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Grain"
         '
-        'radShotgun
-        '
-        Me.radShotgun.AutoSize = True
-        Me.radShotgun.Location = New System.Drawing.Point(146, 52)
-        Me.radShotgun.Name = "radShotgun"
-        Me.radShotgun.Size = New System.Drawing.Size(82, 21)
-        Me.radShotgun.TabIndex = 2
-        Me.radShotgun.TabStop = True
-        Me.radShotgun.Text = "Shotgun"
-        Me.radShotgun.UseVisualStyleBackColor = True
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 387)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 385)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(424, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(424, 24)
         Me.StatusStrip1.TabIndex = 19
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -223,7 +222,7 @@ Partial Class frmAmmo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmAmmo"
-        Me.Text = "frmAmmo"
+        Me.Text = "Add Ammo"
         Me.BulletType.ResumeLayout(False)
         Me.BulletType.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
