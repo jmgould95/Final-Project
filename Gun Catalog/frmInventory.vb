@@ -1,12 +1,18 @@
 ﻿Imports CatalogLibrary
-
+''' <summary>
+''' Jimmy Gould
+''' Final Project
+''' 12/5/2016
+''' This Form Adds ammo
+''' </summary>
 Public Class frmInventory
-    Dim gunDb As New Guns
-    Dim ammoDb As New Ammunition
-    Dim Showing As String = ""
-    Dim EditAmmo As New frmEditAmmo
-    Dim EditGun As New frmEditGun()
+    Dim gunDb As New Guns 'a gun object 
+    Dim ammoDb As New Ammunition ' and ammunition object
+    Dim Showing As String = "" 'how I determine if we are dealing with guns or ammo
+    Dim EditAmmo As New frmEditAmmo() 'an edit ammo form object
+    Dim EditGun As New frmEditGun() 'edit gun form object
 
+    'closes the program
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
@@ -15,7 +21,9 @@ Public Class frmInventory
 
     End Sub
 
+    'to view gun dataset also enables and disables appropriate buttons
     Private Sub btnViewGuns_Click(sender As Object, e As EventArgs) Handles btnViewGuns.Click
+        lblStatus.Text = ""
         btnAvailAmmo.Enabled = True
         btnAvailAmmo.Visible = True
         btnAvailGuns.Enabled = False
@@ -24,7 +32,9 @@ Public Class frmInventory
         Showing = "g"
     End Sub
 
+    'to view Ammo dataset also enables and disables appropriate buttons
     Private Sub btnViewAmmo_Click(sender As Object, e As EventArgs) Handles btnViewAmmo.Click
+        lblStatus.Text = ""
         btnAvailAmmo.Enabled = False
         btnAvailAmmo.Visible = False
         btnAvailGuns.Enabled = True
@@ -33,7 +43,9 @@ Public Class frmInventory
         Showing = "a"
     End Sub
 
+    'Validates and deletes the selected item
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        lblStatus.Text = ""
         Dim ItemIndex As Integer
         Try
             ItemIndex = dgvInventory.CurrentCell.RowIndex
@@ -70,7 +82,9 @@ Public Class frmInventory
 
     End Sub
 
+    'Calls the appropriate edit form and send corresponding information
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        lblStatus.Text = ""
         Dim ItemIndex As Integer
         Try
             ItemIndex = dgvInventory.CurrentCell.RowIndex
@@ -132,6 +146,7 @@ Public Class frmInventory
     End Sub
 
     Private Sub btnFind_Click(sender As Object, e As EventArgs) Handles btnFind.Click
+        lblStatus.Text = ""
         If Showing = "g" Then
             dgvInventory.DataSource = gunDb.FindByName(txtFind.Text)
             lblStatus.Text = gunDb.LastStatus
@@ -145,7 +160,10 @@ Public Class frmInventory
 
     End Sub
 
+    'shows available ammo/compatable
     Private Sub btnAvailAmmo_Click(sender As Object, e As EventArgs) Handles btnAvailAmmo.Click
+        lblStatus.Text = ""
+        Showing = "a"
         Dim ItemIndex As Integer
         Try
             ItemIndex = dgvInventory.CurrentCell.RowIndex
@@ -160,7 +178,10 @@ Public Class frmInventory
         lblStatus.Text = "Total Compatable Ammo is: " + ammoDb.TotalAmmo(caliber)
     End Sub
 
+    'shows compatable ammo and ammo total
     Private Sub btnAvailGuns_Click(sender As Object, e As EventArgs) Handles btnAvailGuns.Click
+        lblStatus.Text = ""
+        Showing = "g"
         Dim ItemIndex As Integer
         Try
             ItemIndex = dgvInventory.CurrentCell.RowIndex

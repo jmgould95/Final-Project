@@ -1,8 +1,14 @@
 ﻿Imports CatalogLibrary
-
+''' <summary>
+''' Jimmy Gould
+''' Final Project
+''' 12/5/2016
+''' This Form Adds ammo
+''' </summary>
 Public Class frmAmmo
     Dim Ammo As New Ammunition
 
+    'this button closes the form
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
     End Sub
@@ -11,6 +17,7 @@ Public Class frmAmmo
 
     End Sub
 
+    'takes form information and vailidates then sends to be added to database
     Private Sub btnAddAmmo_Click(sender As Object, e As EventArgs) Handles btnAddAmmo.Click
         Dim brand As String
         Dim caliber As String
@@ -70,8 +77,4 @@ Public Class frmAmmo
         Ammo.ExecuteQuery(brand, caliber, grain, quantity, purchaseDate, type)
         lblStatus.Text = Ammo.LastStatus
     End Sub
-
-    'Private Sub frmAmmo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-    '    Gunfrm.dgvAmmo.DataSource = Ammo.DisplayTable
-    'End Sub
 End Class

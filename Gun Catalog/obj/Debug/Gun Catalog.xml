@@ -22,12 +22,52 @@ Gun Catalog
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:Gun_Catalog.frmAmmo">
+ <summary>
+ Jimmy Gould
+ Final Project
+ 12/5/2016
+ This Form Adds ammo
+ </summary>
+</member>
+<member name="T:Gun_Catalog.frmEditAmmo">
+ <summary>
+ Jimmy Gould
+ Final Project
+ 12/5/2016
+ This Form Edits ammo
+ </summary>
+</member>
+<member name="T:Gun_Catalog.frmEditGun">
+ <summary>
+ Jimmy Gould
+ Final Project
+ 12/5/2016
+ This Form Edits Gun
+ </summary>
+</member>
 <member name="T:Gun_Catalog.frmGun">
  <summary>
  Jimmy Gould
  Final Project
  12/5/1016
  Add a Gun to the database
+ </summary>
+</member>
+<member name="T:Gun_Catalog.frmInventory">
+ <summary>
+ Jimmy Gould
+ Final Project
+ 12/5/2016
+ This Form Adds ammo
+ </summary>
+</member>
+<member name="T:Gun_Catalog.frmMain">
+ <summary>
+ Jimmy Gould
+ Final Project
+ 12/5/2016
+ This Form Adds ammo
  </summary>
 </member>
 </members>

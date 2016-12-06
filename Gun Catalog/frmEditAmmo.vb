@@ -1,5 +1,10 @@
 ﻿Imports CatalogLibrary
-
+''' <summary>
+''' Jimmy Gould
+''' Final Project
+''' 12/5/2016
+''' This Form Edits ammo
+''' </summary>
 Public Class frmEditAmmo
     Dim itemId As Integer
     Dim Gun As New Guns
@@ -12,6 +17,7 @@ Public Class frmEditAmmo
     Public Property Purchased As String
     Public Property Type As String
 
+    'sets approperiate fields to the sent values for the ammo
     Private Sub frmEditAmmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtId.Text = Id.ToString
         txtBrand.Text = Brand
@@ -28,6 +34,7 @@ Public Class frmEditAmmo
         End If
     End Sub
 
+    'validates and calls Ammunition to update specific ammunition
     Private Sub btnUpdateAmmo_Click(sender As Object, e As EventArgs) Handles btnUpdateAmmo.Click
         Dim brand As String
         Dim caliber As String
@@ -88,6 +95,7 @@ Public Class frmEditAmmo
         lblStatus.Text = Ammo.LastStatus
     End Sub
 
+    'this closes it 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
     End Sub

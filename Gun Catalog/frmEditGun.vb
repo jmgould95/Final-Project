@@ -1,5 +1,10 @@
 ﻿Imports CatalogLibrary
-
+''' <summary>
+''' Jimmy Gould
+''' Final Project
+''' 12/5/2016
+''' This Form Edits Gun
+''' </summary>
 Public Class frmEditGun
     Dim itemId As Integer
     Dim Gun As New Guns
@@ -11,7 +16,7 @@ Public Class frmEditGun
     Public Property Type As String
     Public Property SerialNum As String
 
-
+    'sets fields to approperiate values from sent infromation
     Private Sub frmEditGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblStatus.Text = ""
         txtId.Text = Id.ToString()
@@ -31,6 +36,7 @@ Public Class frmEditGun
         End If
     End Sub
 
+    'Validates fields and calles Gun and updates fields
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim purchased As DateTime = dtpDatePurchased.Value.Date
         Dim make As String = ""
@@ -100,6 +106,7 @@ Public Class frmEditGun
 
     End Sub
 
+    'do I have to explain?
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Me.Close()
     End Sub

@@ -34,7 +34,7 @@ namespace CatalogLibrary
         {
             ds.Clear();
             sql = "INSERT INTO Ammo (Brand, Grain, Caliber, PurchaseDate, Quantity, Type) Values(" +
-                    "'test'," + pGrain + ",'"+pCaliber+"','"+pPurchaseDate+"'," + pQuality + ",'"+pType+"')";
+                    "'"+pBrnad+"'," + pGrain + ",'"+pCaliber+"','"+pPurchaseDate+"'," + pQuality + ",'"+pType+"')";
             try
             {
                 connection.Open();
@@ -129,7 +129,7 @@ namespace CatalogLibrary
             connection.Open();
             DataSet dataSet = new DataSet();
 
-            sql = "Select * From Ammo Order by Id";
+            sql = "Select * From Ammo";
             //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
             //sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
             dataAdapter = new SQLiteDataAdapter(sql, connection);

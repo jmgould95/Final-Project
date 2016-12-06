@@ -59,21 +59,21 @@ Partial Class frmAmmo
         Me.dtpDatePurchased.Location = New System.Drawing.Point(122, 180)
         Me.dtpDatePurchased.Name = "dtpDatePurchased"
         Me.dtpDatePurchased.Size = New System.Drawing.Size(105, 22)
-        Me.dtpDatePurchased.TabIndex = 10
+        Me.dtpDatePurchased.TabIndex = 4
         '
         'txtCaliber
         '
         Me.txtCaliber.Location = New System.Drawing.Point(76, 50)
         Me.txtCaliber.Name = "txtCaliber"
         Me.txtCaliber.Size = New System.Drawing.Size(100, 22)
-        Me.txtCaliber.TabIndex = 9
+        Me.txtCaliber.TabIndex = 1
         '
         'txtBrand
         '
         Me.txtBrand.Location = New System.Drawing.Point(76, 12)
         Me.txtBrand.Name = "txtBrand"
         Me.txtBrand.Size = New System.Drawing.Size(100, 22)
-        Me.txtBrand.TabIndex = 8
+        Me.txtBrand.TabIndex = 0
         '
         'Label2
         '
@@ -101,7 +101,7 @@ Partial Class frmAmmo
         Me.BulletType.Location = New System.Drawing.Point(12, 227)
         Me.BulletType.Name = "BulletType"
         Me.BulletType.Size = New System.Drawing.Size(349, 100)
-        Me.BulletType.TabIndex = 12
+        Me.BulletType.TabIndex = 5
         Me.BulletType.TabStop = False
         Me.BulletType.Text = "Bullet Type"
         '
@@ -122,7 +122,7 @@ Partial Class frmAmmo
         Me.radFMJ.Location = New System.Drawing.Point(6, 30)
         Me.radFMJ.Name = "radFMJ"
         Me.radFMJ.Size = New System.Drawing.Size(134, 21)
-        Me.radFMJ.TabIndex = 1
+        Me.radFMJ.TabIndex = 0
         Me.radFMJ.TabStop = True
         Me.radFMJ.Text = "Full Metal Jacket"
         Me.radFMJ.UseVisualStyleBackColor = True
@@ -142,7 +142,7 @@ Partial Class frmAmmo
         Me.btnAddAmmo.Location = New System.Drawing.Point(48, 343)
         Me.btnAddAmmo.Name = "btnAddAmmo"
         Me.btnAddAmmo.Size = New System.Drawing.Size(104, 23)
-        Me.btnAddAmmo.TabIndex = 13
+        Me.btnAddAmmo.TabIndex = 6
         Me.btnAddAmmo.Text = "Add Ammo"
         Me.btnAddAmmo.UseVisualStyleBackColor = True
         '
@@ -151,7 +151,7 @@ Partial Class frmAmmo
         Me.btnReturn.Location = New System.Drawing.Point(174, 343)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(94, 23)
-        Me.btnReturn.TabIndex = 14
+        Me.btnReturn.TabIndex = 7
         Me.btnReturn.Text = "Exit Form"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
@@ -160,7 +160,7 @@ Partial Class frmAmmo
         Me.txtQuantity.Location = New System.Drawing.Point(76, 131)
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(100, 22)
-        Me.txtQuantity.TabIndex = 16
+        Me.txtQuantity.TabIndex = 3
         '
         'Label4
         '
@@ -176,7 +176,7 @@ Partial Class frmAmmo
         Me.txtGrain.Location = New System.Drawing.Point(76, 89)
         Me.txtGrain.Name = "txtGrain"
         Me.txtGrain.Size = New System.Drawing.Size(100, 22)
-        Me.txtGrain.TabIndex = 18
+        Me.txtGrain.TabIndex = 2
         '
         'Label5
         '
@@ -191,9 +191,9 @@ Partial Class frmAmmo
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 385)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 387)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(424, 24)
+        Me.StatusStrip1.Size = New System.Drawing.Size(424, 22)
         Me.StatusStrip1.TabIndex = 19
         Me.StatusStrip1.Text = "StatusStrip1"
         '
