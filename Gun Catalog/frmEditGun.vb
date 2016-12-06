@@ -5,10 +5,30 @@ Public Class frmEditGun
     Dim Gun As New Guns
     Dim Ammo As New Ammunition
     Public Property Id As Integer
+    Public Property Purchased As String
+    Public Property Make As String
+    Public Property Model As String
+    Public Property Type As String
+    Public Property SerialNum As String
+
 
     Private Sub frmEditGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblStatus.Text = ""
         txtId.Text = Id.ToString()
         dgvAmmo.DataSource = Ammo.DisplayTable
+        txtBrand.Text = Make
+        txtModel.Text = Model
+        txtSN.Text = SerialNum
+        dtpDatePurchased.Value = DateTime.Parse(Purchased)
+
+        If Type = "Pistol" Then
+            radPistol.Checked = True
+
+        ElseIf (Type = "Rifle") Then
+            radRifle.Checked = True
+        Else
+            radShotGun.Checked = True
+        End If
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click

@@ -5,9 +5,27 @@ Public Class frmEditAmmo
     Dim Gun As New Guns
     Dim Ammo As New Ammunition
     Public Property Id As Integer
+    Public Property Brand As String
+    Public Property Caliber As String
+    Public Property Grain As Integer
+    Public Property Quantity As Integer
+    Public Property Purchased As String
+    Public Property Type As String
 
     Private Sub frmEditAmmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtId.Text = Id.ToString
+        txtBrand.Text = Brand
+        txtCaliber.Text = Caliber
+        txtGrain.Text = Grain.ToString
+        txtQuantity.Text = Quantity.ToString
+        dtpDatePurchased.Value = DateTime.Parse(Purchased)
+        If Type = "FMJ" Then
+            radFMJ.Checked = True
+        ElseIf (Type = "Hollow Point") Then
+            radHollowPoint.Checked = True
+        Else
+            radShotgun.Checked = True
+        End If
     End Sub
 
     Private Sub btnUpdateAmmo_Click(sender As Object, e As EventArgs) Handles btnUpdateAmmo.Click

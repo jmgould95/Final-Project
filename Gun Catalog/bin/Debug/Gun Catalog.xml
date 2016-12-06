@@ -22,5 +22,13 @@ Gun Catalog
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:Gun_Catalog.frmGun">
+ <summary>
+ Jimmy Gould
+ Final Project
+ 12/5/1016
+ Add a Gun to the database
+ </summary>
+</member>
 </members>
 </doc>

@@ -1,5 +1,10 @@
 ﻿Imports CatalogLibrary
-
+''' <summary>
+''' Jimmy Gould
+''' Final Project
+''' 12/5/1016
+''' Add a Gun to the database
+''' </summary>
 Public Class frmGun
     'The list and the gun object might be taken out when the database is created
     Dim Gun As New Guns
@@ -18,8 +23,10 @@ Public Class frmGun
         Me.Close()
     End Sub
 
+    'shows ammo dialog and refreshes the data grid view when ammo form is closed
     Private Sub btnAmmunition_Click(sender As Object, e As EventArgs) Handles btnAmmunition.Click
         AmmoFrm.ShowDialog()
+        dgvAmmo.DataSource = Ammo.DisplayTable
 
     End Sub
 

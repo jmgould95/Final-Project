@@ -32,6 +32,8 @@ Partial Class frmInventory
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtFind = New System.Windows.Forms.TextBox()
         Me.btnFind = New System.Windows.Forms.Button()
+        Me.btnAvailAmmo = New System.Windows.Forms.Button()
+        Me.btnAvailGuns = New System.Windows.Forms.Button()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -47,7 +49,7 @@ Partial Class frmInventory
         '
         'btnViewAmmo
         '
-        Me.btnViewAmmo.Location = New System.Drawing.Point(217, 392)
+        Me.btnViewAmmo.Location = New System.Drawing.Point(38, 388)
         Me.btnViewAmmo.Name = "btnViewAmmo"
         Me.btnViewAmmo.Size = New System.Drawing.Size(104, 23)
         Me.btnViewAmmo.TabIndex = 1
@@ -56,7 +58,7 @@ Partial Class frmInventory
         '
         'btnViewGuns
         '
-        Me.btnViewGuns.Location = New System.Drawing.Point(375, 392)
+        Me.btnViewGuns.Location = New System.Drawing.Point(196, 388)
         Me.btnViewGuns.Name = "btnViewGuns"
         Me.btnViewGuns.Size = New System.Drawing.Size(97, 23)
         Me.btnViewGuns.TabIndex = 2
@@ -65,7 +67,7 @@ Partial Class frmInventory
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(533, 392)
+        Me.btnEdit.Location = New System.Drawing.Point(354, 388)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(109, 23)
         Me.btnEdit.TabIndex = 3
@@ -74,7 +76,7 @@ Partial Class frmInventory
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(848, 392)
+        Me.btnExit.Location = New System.Drawing.Point(974, 388)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 4
@@ -83,7 +85,7 @@ Partial Class frmInventory
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(680, 392)
+        Me.btnDelete.Location = New System.Drawing.Point(501, 388)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(135, 23)
         Me.btnDelete.TabIndex = 5
@@ -121,11 +123,35 @@ Partial Class frmInventory
         Me.btnFind.Text = "Find By Name"
         Me.btnFind.UseVisualStyleBackColor = True
         '
+        'btnAvailAmmo
+        '
+        Me.btnAvailAmmo.Enabled = False
+        Me.btnAvailAmmo.Location = New System.Drawing.Point(660, 388)
+        Me.btnAvailAmmo.Name = "btnAvailAmmo"
+        Me.btnAvailAmmo.Size = New System.Drawing.Size(135, 23)
+        Me.btnAvailAmmo.TabIndex = 9
+        Me.btnAvailAmmo.Text = "Available Ammo "
+        Me.btnAvailAmmo.UseVisualStyleBackColor = True
+        Me.btnAvailAmmo.Visible = False
+        '
+        'btnAvailGuns
+        '
+        Me.btnAvailGuns.Enabled = False
+        Me.btnAvailGuns.Location = New System.Drawing.Point(822, 388)
+        Me.btnAvailGuns.Name = "btnAvailGuns"
+        Me.btnAvailGuns.Size = New System.Drawing.Size(135, 23)
+        Me.btnAvailGuns.TabIndex = 10
+        Me.btnAvailGuns.Text = "Compatable Guns"
+        Me.btnAvailGuns.UseVisualStyleBackColor = True
+        Me.btnAvailGuns.Visible = False
+        '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1061, 451)
+        Me.Controls.Add(Me.btnAvailGuns)
+        Me.Controls.Add(Me.btnAvailAmmo)
         Me.Controls.Add(Me.btnFind)
         Me.Controls.Add(Me.txtFind)
         Me.Controls.Add(Me.StatusStrip1)
@@ -155,4 +181,6 @@ Partial Class frmInventory
     Friend WithEvents lblStatus As ToolStripStatusLabel
     Friend WithEvents txtFind As TextBox
     Friend WithEvents btnFind As Button
+    Friend WithEvents btnAvailAmmo As Button
+    Friend WithEvents btnAvailGuns As Button
 End Class

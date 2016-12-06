@@ -5,7 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
-
+/// <summary>
+/// Jimmy Gould
+/// Final Project
+/// 12/05/2016
+/// This class library does all the SQL commands for Guns
+/// </summary>
 namespace CatalogLibrary
 {
     public class Guns
@@ -24,6 +29,7 @@ namespace CatalogLibrary
         DataSet ds = new DataSet();
         String sql;
 
+        //This is never Used
         public DataSet ExecuteQuery(string sql)
         {
             ds.Clear();
@@ -47,6 +53,7 @@ namespace CatalogLibrary
             return ds;
         }
 
+        //Finds Gun By name
         public DataView FindByName(string pMake)
         {
             connection.Open();
@@ -70,9 +77,52 @@ namespace CatalogLibrary
             return dataSet.Tables[0].DefaultView;
         }
 
+        //finds compatable Guns by searching ammo id
+        public DataView FindCompatableGuns(int pAmmoId)
+        {
+            connection.Open();
+            DataSet dataSet = new DataSet();
+            DateTime time = DateTime.Now;
+            sql = "Select gunId, Make, Model, GunType, Caliber, SerialNumber, PurchaseDate From Gun AS G  Join Ammo As A ON G.AmmoId=A.Id Where G.AmmoId =" + pAmmoId + "";
+            //sql = "Select * from Gun Where Make = '" + pMake + "'";
+            try
+            {
+                dataAdapter = new SQLiteDataAdapter(sql, connection);
+                dataAdapter.Fill(dataSet);
+                connection.Close();
+                LastStatus = "Succeed";
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+                LastStatus = "Fail";
+            }
+
+            return dataSet.Tables[0].DefaultView;
+        }
+
+        //gets the total guns that have the same ammo Id and returns the count as a string
+        public string TotalCompatableGuns(int pAmmoId)
+        {
+            int Total;
+            connection.Open();
+            DataSet dataSet = new DataSet();
+
+            sql = "Select Count(AmmoId)Id From Gun Where AmmoId =" + pAmmoId + "";
+            command = connection.CreateCommand();
+            command.CommandText = sql;
 
 
-            public DataSet AddGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId)
+            //object caliber =  command.ExecuteScalarAsync;
+            // int test = int.Parse(caliber);
+
+            Total = Convert.ToInt32(command.ExecuteScalar());
+            connection.Close();
+            return Total.ToString();
+        }
+
+        //Adds a gun to the database
+        public DataSet AddGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId)
         {
             ds.Clear();
             DateTime time = DateTime.Now;
@@ -94,6 +144,8 @@ namespace CatalogLibrary
 
             return ds;
         }
+
+        //updates the gun table
         public DataSet UpdateGun(string pMake, string pModel, string pType, string pPurchaseDate, string pSerialNum, int pAmmoId, int pId)
         {
             ds.Clear();
@@ -119,6 +171,9 @@ namespace CatalogLibrary
             return ds;
         }
 
+        
+
+        //this returns the ammo Id as an Int
         public int AmmoId(string pCaliber)
         {
             int caliber;
@@ -137,6 +192,8 @@ namespace CatalogLibrary
             connection.Close();
             return caliber;
         }
+
+        //displays the gun table with an inner join to show the caliber
         public DataView DisplayTable()
         {
             connection.Open();
@@ -159,6 +216,8 @@ namespace CatalogLibrary
             }
             
         }
+
+        //deletes gun form the gun table
         public bool DeleteGun(int pId)
         {
             ds.Clear();

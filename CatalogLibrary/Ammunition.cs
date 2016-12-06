@@ -5,7 +5,12 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// Jimmy Gould
+/// Final Project
+/// 12/05/2016
+/// This class library does all the SQL commands for Ammunition
+/// </summary>
 namespace CatalogLibrary
 {
    public class Ammunition
@@ -24,6 +29,7 @@ namespace CatalogLibrary
         DataSet ds = new DataSet();
         String sql;
        
+        //should have named this Add or insert but this adds ammo to the database
         public DataSet ExecuteQuery(string pBrnad, string pCaliber, int pGrain, int pQuality, string pPurchaseDate, string pType)
         {
             ds.Clear();
@@ -46,6 +52,22 @@ namespace CatalogLibrary
             return ds;
         }
 
+        //this shows the compatable ammo or a gun
+        public DataView AvailableAmmo(string pCaliber)
+        {
+            connection.Open();
+            DataSet dataSet = new DataSet();
+
+            sql = "Select * From Ammo Where Caliber= '" + pCaliber + "'";
+            //"From Gun Inner Join Ammo ON Gun.AmmoId=Ammo.Id";
+            //sql = "Select Make, Model, Type, Caliber, SerialNumber, PurchaseDate From Gun AS G Join Ammo As A ON G.AmmoId=A.Id";
+            dataAdapter = new SQLiteDataAdapter(sql, connection);
+            dataAdapter.Fill(dataSet);
+            connection.Close();
+            return dataSet.Tables[0].DefaultView;
+        }
+
+        //this updates the ammo
         public DataSet UpdateAmmo(string pBrnad, string pCaliber, int pGrain, int pQuality, string pPurchaseDate, string pType, int pId)
         {
             ds.Clear();
@@ -70,6 +92,8 @@ namespace CatalogLibrary
 
             return ds;
         }
+
+        //This displays just the ammo caliber
         public DataView DisplayTable()
         {
             connection.Open();
@@ -84,6 +108,7 @@ namespace CatalogLibrary
             return dataSet.Tables[0].DefaultView;
         }
 
+        //This finds ammo based on the brand
         public DataView FindAmmo(string pName)
         {
             connection.Open();
@@ -98,6 +123,7 @@ namespace CatalogLibrary
             return dataSet.Tables[0].DefaultView;
         }
 
+        //this displays all ammo information
         public DataView DisplayAll()
         {
             connection.Open();
@@ -112,6 +138,7 @@ namespace CatalogLibrary
             return dataSet.Tables[0].DefaultView;
         }
 
+        //this deletes a particular ammunition
         public bool DeleteAmmo(int pId)
         {
             ds.Clear();
@@ -134,6 +161,24 @@ namespace CatalogLibrary
             return true;
         }
 
+        //This returns the total amount of ammo as a string
+        public String TotalAmmo(string pCaliber)
+        {
+            int Total = 0;
+            connection.Open();
+            DataSet dataSet = new DataSet();
+            sql = "Select Sum(Quantity) From Ammo Where Caliber ='" + pCaliber + "'";
+            command = connection.CreateCommand();
+            command.CommandText = sql;
+
+
+            //object caliber =  command.ExecuteScalarAsync;
+            // int test = int.Parse(caliber);
+
+            Total = Convert.ToInt32(command.ExecuteScalar());
+            connection.Close();
+            return Total.ToString();
+        }
 
         //    private string mBrand;
         //    private int mGrain;
